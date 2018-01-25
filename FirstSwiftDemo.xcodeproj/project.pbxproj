@@ -7,13 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6DF5C1E047F92FD3EEF1EB48 /* Pods_FirstSwiftDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 439D2AD6E5BF414B04E6171B /* Pods_FirstSwiftDemo.framework */; };
 		9FF2366720170FF100DB52BB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF2366620170FF100DB52BB /* AppDelegate.swift */; };
-		9FF2366920170FF200DB52BB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF2366820170FF200DB52BB /* ViewController.swift */; };
-		9FF2366C20170FF200DB52BB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9FF2366A20170FF200DB52BB /* Main.storyboard */; };
 		9FF2366E20170FF200DB52BB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9FF2366D20170FF200DB52BB /* Assets.xcassets */; };
 		9FF2367120170FF200DB52BB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9FF2366F20170FF200DB52BB /* LaunchScreen.storyboard */; };
 		9FF2367C20170FF200DB52BB /* FirstSwiftDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF2367B20170FF200DB52BB /* FirstSwiftDemoTests.swift */; };
 		9FF2368720170FF200DB52BB /* FirstSwiftDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF2368620170FF200DB52BB /* FirstSwiftDemoUITests.swift */; };
+		9FF23697201727C700DB52BB /* FirstSwiftDemoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF23696201727C700DB52BB /* FirstSwiftDemoController.swift */; };
+		9FF2369B2017317C00DB52BB /* BLTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF2369A2017317C00DB52BB /* BLTableViewController.swift */; };
+		9FF2369D201762E800DB52BB /* SecondTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF2369C201762E800DB52BB /* SecondTableViewController.swift */; };
+		9FF236A02018178900DB52BB /* FirstTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF2369E2018178900DB52BB /* FirstTableViewCell.swift */; };
+		9FF236A12018178900DB52BB /* FirstTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FF2369F2018178900DB52BB /* FirstTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,10 +38,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		439D2AD6E5BF414B04E6171B /* Pods_FirstSwiftDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FirstSwiftDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6E36FA124BB1D9716FCD39A4 /* Pods-FirstSwiftDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirstSwiftDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FirstSwiftDemo/Pods-FirstSwiftDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		88E285F6A39678202AB61741 /* Pods-FirstSwiftDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirstSwiftDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-FirstSwiftDemo/Pods-FirstSwiftDemo.release.xcconfig"; sourceTree = "<group>"; };
 		9FF2366320170FF100DB52BB /* FirstSwiftDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FirstSwiftDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FF2366620170FF100DB52BB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		9FF2366820170FF200DB52BB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		9FF2366B20170FF200DB52BB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9FF2366D20170FF200DB52BB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9FF2367020170FF200DB52BB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9FF2367220170FF200DB52BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -47,6 +52,11 @@
 		9FF2368220170FF200DB52BB /* FirstSwiftDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FirstSwiftDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FF2368620170FF200DB52BB /* FirstSwiftDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstSwiftDemoUITests.swift; sourceTree = "<group>"; };
 		9FF2368820170FF200DB52BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9FF23696201727C700DB52BB /* FirstSwiftDemoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstSwiftDemoController.swift; sourceTree = "<group>"; };
+		9FF2369A2017317C00DB52BB /* BLTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLTableViewController.swift; sourceTree = "<group>"; };
+		9FF2369C201762E800DB52BB /* SecondTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondTableViewController.swift; sourceTree = "<group>"; };
+		9FF2369E2018178900DB52BB /* FirstTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstTableViewCell.swift; sourceTree = "<group>"; };
+		9FF2369F2018178900DB52BB /* FirstTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FirstTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6DF5C1E047F92FD3EEF1EB48 /* Pods_FirstSwiftDemo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,6 +85,60 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1396E28F54B0842500D3DA2B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				439D2AD6E5BF414B04E6171B /* Pods_FirstSwiftDemo.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		93E6FCC103AB3AB86E9C5A52 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6E36FA124BB1D9716FCD39A4 /* Pods-FirstSwiftDemo.debug.xcconfig */,
+				88E285F6A39678202AB61741 /* Pods-FirstSwiftDemo.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		9F659CC9201892010000EA12 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				9FF2369C201762E800DB52BB /* SecondTableViewController.swift */,
+				9FF23696201727C700DB52BB /* FirstSwiftDemoController.swift */,
+				9FF2369A2017317C00DB52BB /* BLTableViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		9F659CCA2018920A0000EA12 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9FF2369E2018178900DB52BB /* FirstTableViewCell.swift */,
+				9FF2369F2018178900DB52BB /* FirstTableViewCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		9F659CCB201892150000EA12 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		9F659CCC201892250000EA12 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				9FF2366620170FF100DB52BB /* AppDelegate.swift */,
+				9FF2366D20170FF200DB52BB /* Assets.xcassets */,
+				9FF2366F20170FF200DB52BB /* LaunchScreen.storyboard */,
+				9FF2367220170FF200DB52BB /* Info.plist */,
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
 		9FF2365A20170FF100DB52BB = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +146,8 @@
 				9FF2367A20170FF200DB52BB /* FirstSwiftDemoTests */,
 				9FF2368520170FF200DB52BB /* FirstSwiftDemoUITests */,
 				9FF2366420170FF100DB52BB /* Products */,
+				93E6FCC103AB3AB86E9C5A52 /* Pods */,
+				1396E28F54B0842500D3DA2B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -97,12 +164,10 @@
 		9FF2366520170FF100DB52BB /* FirstSwiftDemo */ = {
 			isa = PBXGroup;
 			children = (
-				9FF2366620170FF100DB52BB /* AppDelegate.swift */,
-				9FF2366820170FF200DB52BB /* ViewController.swift */,
-				9FF2366A20170FF200DB52BB /* Main.storyboard */,
-				9FF2366D20170FF200DB52BB /* Assets.xcassets */,
-				9FF2366F20170FF200DB52BB /* LaunchScreen.storyboard */,
-				9FF2367220170FF200DB52BB /* Info.plist */,
+				9F659CCB201892150000EA12 /* Model */,
+				9F659CCA2018920A0000EA12 /* View */,
+				9F659CC9201892010000EA12 /* Controller */,
+				9F659CCC201892250000EA12 /* Other */,
 			);
 			path = FirstSwiftDemo;
 			sourceTree = "<group>";
@@ -132,9 +197,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9FF2368B20170FF200DB52BB /* Build configuration list for PBXNativeTarget "FirstSwiftDemo" */;
 			buildPhases = (
+				D32F4B221724B14E8490302F /* [CP] Check Pods Manifest.lock */,
 				9FF2365F20170FF100DB52BB /* Sources */,
 				9FF2366020170FF100DB52BB /* Frameworks */,
 				9FF2366120170FF100DB52BB /* Resources */,
+				E280B5BCFCD9F6541EBEDC8B /* [CP] Embed Pods Frameworks */,
+				97CAB91B56B70D2CE290A3A8 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -233,8 +301,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				9FF2367120170FF200DB52BB /* LaunchScreen.storyboard in Resources */,
+				9FF236A12018178900DB52BB /* FirstTableViewCell.xib in Resources */,
 				9FF2366E20170FF200DB52BB /* Assets.xcassets in Resources */,
-				9FF2366C20170FF200DB52BB /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -254,13 +322,81 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		97CAB91B56B70D2CE290A3A8 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-FirstSwiftDemo/Pods-FirstSwiftDemo-resources.sh",
+				"${PODS_ROOT}/IQKeyboardManager/IQKeyboardManager/Resources/IQKeyboardManager.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FirstSwiftDemo/Pods-FirstSwiftDemo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D32F4B221724B14E8490302F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FirstSwiftDemo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E280B5BCFCD9F6541EBEDC8B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-FirstSwiftDemo/Pods-FirstSwiftDemo-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/GrowingTextView/GrowingTextView.framework",
+				"${BUILT_PRODUCTS_DIR}/KYCircularProgress/KYCircularProgress.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GrowingTextView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KYCircularProgress.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FirstSwiftDemo/Pods-FirstSwiftDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		9FF2365F20170FF100DB52BB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9FF2366920170FF200DB52BB /* ViewController.swift in Sources */,
+				9FF2369B2017317C00DB52BB /* BLTableViewController.swift in Sources */,
+				9FF2369D201762E800DB52BB /* SecondTableViewController.swift in Sources */,
+				9FF236A02018178900DB52BB /* FirstTableViewCell.swift in Sources */,
 				9FF2366720170FF100DB52BB /* AppDelegate.swift in Sources */,
+				9FF23697201727C700DB52BB /* FirstSwiftDemoController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -296,14 +432,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		9FF2366A20170FF200DB52BB /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				9FF2366B20170FF200DB52BB /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		9FF2366F20170FF200DB52BB /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -424,10 +552,11 @@
 		};
 		9FF2368C20170FF200DB52BB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6E36FA124BB1D9716FCD39A4 /* Pods-FirstSwiftDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = FirstSwiftDemo/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/FirstSwiftDemo/Other/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.balopy.www.FirstSwiftDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -438,10 +567,11 @@
 		};
 		9FF2368D20170FF200DB52BB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 88E285F6A39678202AB61741 /* Pods-FirstSwiftDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = FirstSwiftDemo/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/FirstSwiftDemo/Other/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.balopy.www.FirstSwiftDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
