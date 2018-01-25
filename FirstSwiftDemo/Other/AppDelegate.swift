@@ -15,7 +15,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        window = UIWindow (frame: UIScreen.main.bounds)
+        let firstVc = FirstSwiftDemoController()
+        let navC = UINavigationController (rootViewController: firstVc)
+        
+        navC.navigationBar.barTintColor = UIColor.red
+        navC.navigationBar.tintColor = UIColor.white
+        
+        navC.navigationBar.titleTextAttributes = {[
+            NSAttributedStringKey.foregroundColor: UIColor.white
+            ]}()
+        
+        window?.rootViewController = navC
+
+        window?.makeKeyAndVisible()
+        
         return true
     }
 

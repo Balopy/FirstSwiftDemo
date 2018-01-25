@@ -1,0 +1,24 @@
+PODS:
+  - Alamofire (4.6.0)
+  - GrowingTextView (0.5.4)
+  - Kingfisher (4.6.1)
+  - KYCircularProgress (1.0.1)
+  - SnapKit (4.0.0)
+
+DEPENDENCIES:
+  - Alamofire (~> 4.4)
+  - GrowingTextView
+  - Kingfisher
+  - KYCircularProgress
+  - SnapKit
+
+SPEC CHECKSUMS:
+  Alamofire: f41a599bd63041760b26d393ec1069d9d7b917f4
+  GrowingTextView: 0615429affef558cbbb610aa6f9baf19b027fdbe
+  Kingfisher: 1f9157d9c02b380cbd0b7cc890161195164eb634
+  KYCircularProgress: b782af0a68dd2032a4a523e722ec8d571c285cf2
+  SnapKit: a42d492c16e80209130a3379f73596c3454b7694
+
+PODFILE CHECKSUM: 84c2b995dde838d61f32c5ac7c791a47a16450b6
+
+COCOAPODS: 1.3.1
