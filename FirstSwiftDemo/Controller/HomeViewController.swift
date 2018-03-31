@@ -1,5 +1,5 @@
 //
-//  FirstSwiftDemoController.swift
+//  HomeViewController.swift
 //  FirstSwiftDemo
 //
 //  Created by 王春龙 on 2018/1/23.
@@ -8,46 +8,49 @@
 
 import UIKit
 
-let kScreen_height = UIScreen.main.bounds.height
-let kScreen_width = UIScreen.main.bounds.width
-/*代替之前的49*/
-let kTabBarHeight: CGFloat = (UIApplication.shared.statusBarFrame.size.height > 20.0 ? 83.0:49.0)
-let kNavBarHeight:CGFloat = 44.0
-let kStatusBarHeight: CGFloat = UIApplication.shared.statusBarFrame.size.height
-
-/*代替之前的64*/
-let kTopHeight = kStatusBarHeight + kNavBarHeight
 
 let kMeCellID = "meCellId"
 
 
-class FirstSwiftDemoController: UIViewController
+class HomeViewController: UIViewController
 {
     var currentBtn = UIButton()
     var isScroll = false
     
-    var titles = ["全部内容","视频","声音","图片","段子"]
+    var titles = ["全部内容","视频","声音","图片"]//,"段子"
+    
+    lazy var titleView : UIView = {
+        
+        let tempView = UIView (frame: CGRect (x: 0, y: BLTop_Y, width: kScreen_width, height: 44))
+        tempView.backgroundColor = UIColor.white
+        view.addSubview(tempView)
+        
+        return tempView
+    }()
+    
     lazy var bottomLine : UIView = {
         let view = UIView()
         view.backgroundColor = UIColor.red
         return view
     }()  
     
-    //底部大的容器存放子视图
-    lazy var contentView: UIScrollView = {
-        let scrollView = UIScrollView()
-       
+    lazy var scrollView : UIScrollView = {
         
-        let frame = self.view.bounds;
-        scrollView.frame = frame;
-        let size = CGSize(width: kScreen_width * CGFloat(self.titles.count), height: kScreen_height)
-        scrollView.contentSize = size
-        scrollView.bounces = false
-        scrollView.isScrollEnabled = false
-        scrollView.isPagingEnabled = true
-        scrollView.delegate = self
-        view.addSubview(scrollView)
-        return scrollView
+        let scroll = UIScrollView()
+       
+        let frame = CGRect (x: 0, y: titleView.frame.maxY, width: kScreen_width, height: kScreen_height-titleView.frame.maxY)
+        scroll.frame = frame
+        
+        let size = CGSize(width: kScreen_width * CGFloat(self.titles.count), height: frame.height)
+        scroll.contentSize = size
+        
+        scroll.bounces = false
+        scroll.isScrollEnabled = false
+        scroll.isPagingEnabled = true
+        scroll.delegate = self
+        view.addSubview(scroll)
+
+        return scroll
     }()
     
     
@@ -55,27 +58,31 @@ class FirstSwiftDemoController: UIViewController
         super.viewDidLoad()
         self.navigationItem.title = "中石油选课"
         self.view.backgroundColor = UIColor.white
-        
-        if #available(iOS 11.0, *) {
-            contentView.contentInsetAdjustmentBehavior = .never
-        }else{
-            
-            automaticallyAdjustsScrollViewInsets = false
-        }
-        
-        setupSubViews()
+      
+        //因为有延加载,要注意属性的调用顺序
+        setupTitleViews()
         setupChildViewControllers()
-        scrollViewDidScroll(contentView)
-
+        scrollViewDidScroll(self.scrollView)
+//        setUpSomeOther()
     }
 }
-// MARK: - 设置UI
-extension FirstSwiftDemoController {
-    fileprivate func setupSubViews() {
+
+extension HomeViewController {
+    @objc fileprivate func setUpSomeOther () {
         
-        let titleView = UIView (frame: CGRect (x: 0, y: kTopHeight, width: kScreen_width, height: 44))
-        titleView.backgroundColor = UIColor.white
-        view.addSubview(titleView)
+        if #available(iOS 11.0, *) {
+            self.scrollView.contentInsetAdjustmentBehavior = .never
+        }else{
+
+            automaticallyAdjustsScrollViewInsets = false
+        }
+    }
+}
+
+// MARK: - 设置UI 底部大的容器存放子视图
+extension HomeViewController {
+    
+    fileprivate func setupTitleViews() {
         
         for i in 0..<titles.count {
             let button = UIButton (type: UIButtonType.custom)
@@ -96,19 +103,18 @@ extension FirstSwiftDemoController {
                 titleView.addSubview(bottomLine)
                 
                 sectionDidSelectedForTag(button)
-                
             }
         }
     }
 }
 
-extension FirstSwiftDemoController {
+extension HomeViewController {
     
     @objc func sectionDidSelectedForTag(_ button:UIButton) {
         
-        //        navigationController?.pushViewController(BLTableViewController(), animated: true)
+        //        navigationController?.pushViewController(VideoViewController(), animated: true)
         //        if !isScroll {
-        contentView.contentOffset.x = kScreen_width*CGFloat(button.tag-100)
+        self.scrollView.contentOffset.x = kScreen_width*CGFloat(button.tag-100)
         //        }
         currentBtn.isEnabled = true
         currentBtn = button
@@ -124,27 +130,43 @@ extension FirstSwiftDemoController {
 }
 
 // MARK: - 数据源
-extension FirstSwiftDemoController {
+extension HomeViewController {
     @objc func setupChildViewControllers() {
         
         for i in 0..<titles.count {
             
-            if Int(i)%2 == 0 {
-                
-                let  vc =  SecondTableViewController()
-                vc.navtitle = titles[i]
+            switch i {
+            case 0: do {
+                let  vc =  AllContentViewController()
                 addChildViewController(vc)
-            } else {
-                
-                let vc = BLTableViewController()
+            }
+                break
+            case 1: do {
+                let vc = VideoViewController()
                 addChildViewController(vc)
+            }
+                break
+            case 2: do {
+                let vc = AudioViewController()
+                addChildViewController(vc)
+            }
+                break
+                
+            case 3: do {
+                
+                let vc = ImageViewController()
+                addChildViewController(vc)
+            }
+                break
+            default:
+                break
             }
         }
     }
 }
 
 
-extension FirstSwiftDemoController:UIScrollViewDelegate {
+extension HomeViewController:UIScrollViewDelegate {
     
     func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
         
@@ -168,15 +190,17 @@ extension FirstSwiftDemoController:UIScrollViewDelegate {
             vc.view.backgroundColor = UIColor.green
             break
         case 3:
-        vc.view.backgroundColor = UIColor.blue
+            vc.view.backgroundColor = UIColor.blue
             break
             
         default:
             vc.view.backgroundColor = UIColor.red
             break
         }
-        vc.view.frame = CGRect(x: index * kScreen_width, y: bottomLine.frame.maxY, width: kScreen_width, height: contentView.contentSize.height)
-        contentView.addSubview(vc.view)
+        
+        let frame : CGRect = CGRect (x: index * kScreen_width, y: 0, width: kScreen_width, height: scrollView.frame.height)
+        vc.view.frame = frame
+        scrollView.addSubview(vc.view)
     }
 }
 

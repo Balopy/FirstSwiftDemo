@@ -1,5 +1,5 @@
 //
-//  SecondTableViewController.swift
+//  AllContentViewController.swift
 //  FirstSwiftDemo
 //
 //  Created by 王春龙 on 2018/1/23.
@@ -10,7 +10,7 @@ import UIKit
 
 fileprivate let BLCellID = "cellIDw"
 
-class SecondTableViewController: UITableViewController {
+class AllContentViewController: UITableViewController {
     
     var navtitle: String = ""
     
@@ -22,16 +22,15 @@ class SecondTableViewController: UITableViewController {
 }
 
 
-extension SecondTableViewController {
+extension AllContentViewController {
     
     func setupTableView() {
         
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: BLCellID)
+        tableView.register(SecondTableViewCell.self, forCellReuseIdentifier: BLCellID)
         
         if #available(iOS 11.0, *) {
             tableView.contentInsetAdjustmentBehavior = .never
         }
-        tableView.contentInset = UIEdgeInsets(top: kTopHeight + 24, left: 0, bottom: kTabBarHeight, right: 0)
         tableView.scrollIndicatorInsets = tableView.contentInset
         tableView.separatorStyle = .none
     }
@@ -39,7 +38,7 @@ extension SecondTableViewController {
 
 
 // MARK: - Table view data source
-extension SecondTableViewController {
+extension AllContentViewController {
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -52,16 +51,20 @@ extension SecondTableViewController {
     
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: BLCellID, for: indexPath)
+       
+        let cell : SecondTableViewCell = tableView.dequeueReusableCell(withIdentifier: BLCellID, for: indexPath) as! SecondTableViewCell
         
-        cell.textLabel?.text = "hhehehehehe"
-        cell.detailTextLabel?.text = "dfasfasfas"
-        cell.contentView.backgroundColor = self.view.backgroundColor;
-        return cell
+        cell.configureData()
+        
+       return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100;
     }
 }
 
-extension SecondTableViewController {
+extension AllContentViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("------indexPath-----\(indexPath)")

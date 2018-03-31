@@ -1,3 +1,4 @@
+
 platform :ios, '8.0'
 target 'FirstSwiftDemo' do
 
@@ -9,6 +10,6 @@ pod 'KYCircularProgress'
 pod 'SnapKit'
 pod 'GrowingTextView'
 
-
+#pod 'PurchaseInApp', '~>1.0.0'
 
 end

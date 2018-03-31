@@ -1,5 +1,5 @@
 //
-//  BLTableViewController.swift
+//  VideoViewController.swift
 //  FirstSwiftDemo
 //
 //  Created by 王春龙 on 2018/1/23.
@@ -9,17 +9,29 @@
 import UIKit
 
 fileprivate let BLCellID = "cellIDw"
-class BLTableViewController: UITableViewController {
+class VideoViewController: UITableViewController {
+    
+    var abcd: String {
+        return parent.self!.isKind(of: ImageViewController.self) ? "newlist":"list"
+    }
+    var contents = [BLContentModel]()
+    var page: Int = 0
+    var maxTime: String = ""
+    var type: ContentType = .all
+    var currentIndex = 0
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.lightGray
         setupTableView()
+        loadContentData()
     }
 }
 
 
-extension BLTableViewController {
+
+extension VideoViewController {
     
     func setupTableView() {
         
@@ -28,22 +40,36 @@ extension BLTableViewController {
         if #available(iOS 11.0, *) {
             tableView.contentInsetAdjustmentBehavior = .never
         }
-        tableView.contentInset = UIEdgeInsets(top: kTopHeight + 24, left: 0, bottom: kTabBarHeight, right: 0)
         tableView.scrollIndicatorInsets = tableView.contentInset
         tableView.separatorStyle = .none
     }
 }
 
 
+extension VideoViewController {
+    fileprivate func loadContentData() {
+        page += 1
+        FirstViewModel.loadContentsNow(abcd, type.rawValue, page, maxTime) { (isSuccess, maxTime, dataArray) in
+            if isSuccess {
+                self.maxTime = maxTime
+                self.contents += dataArray
+                self.tableView .reloadData()
+            } else {
+                self.page -= 1
+            }
+        }
+    }
+}
+
 // MARK: - Table view data source
-extension BLTableViewController {
+extension VideoViewController {
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
+
         return 20
     }
     
@@ -51,7 +77,7 @@ extension BLTableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: BLCellID, for: indexPath)
         
-        cell.contentView.backgroundColor = self.view.backgroundColor;
+        cell.contentView.backgroundColor = UIColor.lightGray;
         return cell
     }
     
@@ -60,7 +86,7 @@ extension BLTableViewController {
     }
 }
 
-extension BLTableViewController {
+extension VideoViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("------indexPath-----\(indexPath)")

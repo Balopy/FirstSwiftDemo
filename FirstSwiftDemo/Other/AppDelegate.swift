@@ -17,14 +17,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
         window = UIWindow (frame: UIScreen.main.bounds)
-        let firstVc = FirstSwiftDemoController()
+        let firstVc = HomeViewController()
         let navC = UINavigationController (rootViewController: firstVc)
         
         navC.navigationBar.barTintColor = UIColor.red
         navC.navigationBar.tintColor = UIColor.white
         
         navC.navigationBar.titleTextAttributes = {[
-            NSAttributedStringKey.foregroundColor: UIColor.white
+            NSAttributedStringKey.foregroundColor : UIColor.white
             ]}()
         
         window?.rootViewController = navC
